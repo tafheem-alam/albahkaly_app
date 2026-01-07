@@ -1,0 +1,411 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-05 10:59:07.533193",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_odq8",
+  "entity_name__full_legal_name_",
+  "entity_name__full_legal_name__arabic",
+  "customer_type",
+  "commercial_registration_cr",
+  "cr_expiry_date",
+  "unified_registration_number",
+  "activities",
+  "trade_brand_name",
+  "vat_number",
+  "entity_type",
+  "national_address_section",
+  "building_number",
+  "street_name",
+  "region",
+  "city",
+  "postal_code",
+  "additional_number",
+  "unit_number",
+  "short_national_address",
+  "deatails_of_authorized_signatories_section",
+  "name1",
+  "id",
+  "nationality",
+  "job",
+  "mobile",
+  "email",
+  "list_of_attached_documents_section",
+  "commercial_register_cr_",
+  "identities_of_authorized_signatories",
+  "vat_registration_certificate",
+  "national_address",
+  "busniess_licenses",
+  "contact_information_finance_department_section",
+  "department",
+  "name_of_responsible_person",
+  "finance_email_for_invoicing",
+  "mobile_number",
+  "contact_information_2_finance_department_section",
+  "department_2",
+  "name_of_responsible_person_2",
+  "finance_email_for_invoicing_2",
+  "mobile_number_2",
+  "import_and_export_information_section",
+  "expected_shipments_monthly_import",
+  "expected_shipments_monthly_export",
+  "delivery_locations_in_ksa",
+  "shipment_type",
+  "warehouse_location_section",
+  "warehouse_city",
+  "district",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_odq8",
+   "fieldtype": "Section Break",
+   "label": "Details Entity"
+  },
+  {
+   "fieldname": "entity_name__full_legal_name_",
+   "fieldtype": "Data",
+   "label": "Entity Name ( Full Legal Name )",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "entity_name__full_legal_name__arabic",
+   "fieldtype": "Data",
+   "label": "Entity Name ( Full Legal Name ) Arabic",
+   "translatable": 1
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "Company\nIndividual\nPartnership",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "commercial_registration_cr",
+   "fieldtype": "Data",
+   "label": "Commercial Registration (CR)",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "cr_expiry_date",
+   "fieldtype": "Date",
+   "label": "CR Expiry Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unified_registration_number",
+   "fieldtype": "Data",
+   "label": "Unified Registration Number",
+   "translatable": 1
+  },
+  {
+   "fieldname": "activities",
+   "fieldtype": "Data",
+   "label": "Activities",
+   "translatable": 1
+  },
+  {
+   "fieldname": "trade_brand_name",
+   "fieldtype": "Data",
+   "label": "Trade Brand name",
+   "translatable": 1
+  },
+  {
+   "fieldname": "vat_number",
+   "fieldtype": "Data",
+   "label": "VAT Number",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "entity_type",
+   "fieldtype": "Data",
+   "label": "Entity Type",
+   "translatable": 1
+  },
+  {
+   "fieldname": "national_address_section",
+   "fieldtype": "Section Break",
+   "label": "National Address"
+  },
+  {
+   "fieldname": "building_number",
+   "fieldtype": "Data",
+   "label": "Building Number",
+   "translatable": 1
+  },
+  {
+   "fieldname": "street_name",
+   "fieldtype": "Data",
+   "label": "Street Name",
+   "translatable": 1
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code",
+   "translatable": 1
+  },
+  {
+   "fieldname": "additional_number",
+   "fieldtype": "Data",
+   "label": "Additional Number",
+   "translatable": 1
+  },
+  {
+   "fieldname": "unit_number",
+   "fieldtype": "Data",
+   "label": "Unit Number",
+   "translatable": 1
+  },
+  {
+   "fieldname": "short_national_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Short National Address",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "deatails_of_authorized_signatories_section",
+   "fieldtype": "Section Break",
+   "label": "Deatails Of Authorized Signatories"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "ID",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "job",
+   "fieldtype": "Data",
+   "label": "Job",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "list_of_attached_documents_section",
+   "fieldtype": "Section Break",
+   "label": "List of Attached Documents"
+  },
+  {
+   "fieldname": "commercial_register_cr_",
+   "fieldtype": "Attach",
+   "label": "Commercial Register (CR )",
+   "reqd": 1
+  },
+  {
+   "fieldname": "identities_of_authorized_signatories",
+   "fieldtype": "Attach",
+   "label": "Identities of Authorized Signatories"
+  },
+  {
+   "fieldname": "vat_registration_certificate",
+   "fieldtype": "Attach",
+   "label": "VAT Registration Certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "national_address",
+   "fieldtype": "Attach",
+   "label": "National Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "busniess_licenses",
+   "fieldtype": "Attach",
+   "label": "Busniess licenses"
+  },
+  {
+   "fieldname": "contact_information_finance_department_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information (Finance Department)"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "translatable": 1
+  },
+  {
+   "fieldname": "name_of_responsible_person",
+   "fieldtype": "Data",
+   "label": "Name of Responsible Person",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "finance_email_for_invoicing",
+   "fieldtype": "Data",
+   "label": "Finance email for invoicing",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "translatable": 1
+  },
+  {
+   "fieldname": "contact_information_2_finance_department_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information 2 (Finance Department)"
+  },
+  {
+   "fieldname": "department_2",
+   "fieldtype": "Data",
+   "label": "Department 2",
+   "translatable": 1
+  },
+  {
+   "fieldname": "name_of_responsible_person_2",
+   "fieldtype": "Data",
+   "label": "Name of Responsible Person 2",
+   "translatable": 1
+  },
+  {
+   "fieldname": "finance_email_for_invoicing_2",
+   "fieldtype": "Data",
+   "label": "Finance Email for invoicing 2",
+   "translatable": 1
+  },
+  {
+   "fieldname": "mobile_number_2",
+   "fieldtype": "Data",
+   "label": "Mobile Number 2",
+   "translatable": 1
+  },
+  {
+   "fieldname": "import_and_export_information_section",
+   "fieldtype": "Section Break",
+   "label": "Import and Export Information"
+  },
+  {
+   "fieldname": "expected_shipments_monthly_import",
+   "fieldtype": "Data",
+   "label": "Expected Shipments (Monthly) Import",
+   "translatable": 1
+  },
+  {
+   "fieldname": "expected_shipments_monthly_export",
+   "fieldtype": "Data",
+   "label": "Expected Shipments (Monthly) Export",
+   "translatable": 1
+  },
+  {
+   "fieldname": "delivery_locations_in_ksa",
+   "fieldtype": "Select",
+   "label": "Delivery Locations (in KSA)",
+   "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20",
+   "translatable": 1
+  },
+  {
+   "fieldname": "shipment_type",
+   "fieldtype": "Data",
+   "label": "Shipment Type",
+   "translatable": 1
+  },
+  {
+   "fieldname": "warehouse_location_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouse Location"
+  },
+  {
+   "fieldname": "warehouse_city",
+   "fieldtype": "Data",
+   "label": "Warehouse City",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks",
+   "translatable": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "KYC Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-01-06 12:25:30.929834",
+ "modified_by": "Administrator",
+ "module": "Albahkaly App",
+ "name": "KYC Request",
+ "owner": "yasir.raza@sowaan.com",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

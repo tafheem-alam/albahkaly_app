@@ -6,8 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_odq8",
-  "entity_name__full_legal_name_",
-  "entity_name__full_legal_name__arabic",
+  "entity_name",
+  "entity_name_arabic",
   "customer_type",
   "commercial_registration_cr",
   "cr_expiry_date",
@@ -57,26 +57,14 @@
   "warehouse_city",
   "district",
   "remarks",
-  "amended_from"
+  "amended_from",
+  "created_customer"
  ],
  "fields": [
   {
    "fieldname": "section_break_odq8",
    "fieldtype": "Section Break",
    "label": "Details Entity"
-  },
-  {
-   "fieldname": "entity_name__full_legal_name_",
-   "fieldtype": "Data",
-   "label": "Entity Name ( Full Legal Name )",
-   "reqd": 1,
-   "translatable": 1
-  },
-  {
-   "fieldname": "entity_name__full_legal_name__arabic",
-   "fieldtype": "Data",
-   "label": "Entity Name ( Full Legal Name ) Arabic",
-   "translatable": 1
   },
   {
    "fieldname": "customer_type",
@@ -391,13 +379,33 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "entity_name_arabic",
+   "fieldtype": "Data",
+   "label": "Entity Name ( Full Legal Name ) Arabic",
+   "translatable": 1
+  },
+  {
+   "fieldname": "created_customer",
+   "fieldtype": "Link",
+   "label": "Customer Reference",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "label": "Entity Name ( Full Legal Name )",
+   "reqd": 1,
+   "translatable": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-06 12:25:30.929834",
+ "modified": "2026-01-07 15:26:13.341824",
  "modified_by": "Administrator",
  "module": "Albahkaly App",
  "name": "KYC Request",

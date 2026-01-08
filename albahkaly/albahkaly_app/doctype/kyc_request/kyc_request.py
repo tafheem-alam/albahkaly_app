@@ -3,41 +3,50 @@ from frappe.model.document import Document
 
 
 class KYCRequest(Document):
-    pass
+
+    def before_insert(self):
+        self.created_customer = None
 
 
-def sync_to_customer(doc, method=None):
 
-    # Mandatory check
-    if not doc.entity_name__full_legal_name_ or not doc.customer_type:
+@frappe.whitelist()
+def create_customer_from_kyc(kyc_name):
+
+    doc = frappe.get_doc("KYC Request", kyc_name)
+
+    # 🔒 Prevent duplicate action
+    if doc.get("created_customer"):
         frappe.throw(
-            "Full Legal Name and Customer Type are mandatory for Customer creation"
+            f"Customer already created: {doc.created_customer}"
         )
+    frappe.msgprint(f"Entity Name {doc.entity_name } Customer Type {doc.customer_type}")
+
+    # Mandatory fields
+    if not doc.entity_name or not doc.customer_type:
+        frappe.throw("Entity Name and Customer Type are required")
 
     # 🔍 DUPLICATION CHECK
     existing_customer = frappe.db.exists(
         "Customer",
         {
-            "customer_name": doc.entity_name__full_legal_name_,
+            "customer_name": doc.entity_name,
             "customer_type": doc.customer_type,
         }
     )
 
     if existing_customer:
         frappe.throw(
-            f"Customer already exists: <b>{existing_customer}</b>"
+            f"Customer already exists: {existing_customer}"
         )
 
     # ✅ Create Customer
     customer = frappe.new_doc("Customer")
-    #frappe.msgprint(f"customer {customer}")
-    
-    customer.customer_name = doc.entity_name__full_legal_name_
+    customer.customer_name = doc.entity_name
     customer.customer_type = doc.customer_type
 
     FIELD_MAP = {
         "entity_name": "customer_name",
-        "entity_name__full_legal_name__arabic": "custom_entity_name__full_legal_name__arabic",
+        "entity_name_arabic": "custom_entity_name_arabic",
         "unified_registration_number": "custom_unified_registration_number",
         "activities": "custom_activities",
         "trade_brand_name": "custom_trade_brand_name",
@@ -91,7 +100,6 @@ def sync_to_customer(doc, method=None):
     "busniess_licenses": "custom_busniess_licenses",
 }
 
-    # Copy fields
     for kyc_field, customer_field in FIELD_MAP.items():
         if doc.get(kyc_field) is not None:
             customer.set(customer_field, doc.get(kyc_field))
@@ -99,16 +107,18 @@ def sync_to_customer(doc, method=None):
     for kyc_field, customer_field in ATTACH_FIELD_MAP.items():
         if doc.get(kyc_field):
             customer.set(customer_field, doc.get(kyc_field))
-            
+    
+
     value = doc.get("delivery_locations_in_ksa")
-    
-    #frappe.msgprint(f"Value{value}")
-    
+
     if value is not None:
         customer.set("custom_delivery_locations_in_ksa", str(value))
-
+        
+    customer.custom_kyc_request_reference = doc.name   
     customer.insert(ignore_permissions=True)
 
-    frappe.msgprint(
-        f"Customer <b>{customer.name}</b> created successfully from KYC Request"
-    )
+    # 🔁 Save reference back to KYC
+    doc.db_set("created_customer", customer.name)
+
+    return customer.name
+

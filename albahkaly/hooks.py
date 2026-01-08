@@ -138,11 +138,11 @@ app_license = "mit"
 # Hook on document methods and events
 
 
-doc_events = {
-    "KYC Request": {
-        "on_update": "albahkaly.albahkaly_app.doctype.kyc_request.kyc_request.sync_to_customer"
-    }
-}
+# doc_events = {
+#     "KYC Request": {
+#         "on_update": "albahkaly.albahkaly_app.doctype.kyc_request.kyc_request.sync_to_customer"
+#     }
+# }
 
 
 

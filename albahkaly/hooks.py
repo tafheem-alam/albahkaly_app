@@ -145,14 +145,14 @@ app_license = "mit"
 # }
 
 fixtures = [
-    # All custom fields for Sowaan HR Setting
     {
         "doctype": "Custom Field",
         "filters": [
-            ["dt", "in", ("Customer")]
+            ["dt", "in", ["Customer"]]
         ]
     }
 ]
+
 
 # doc_events = {
 # 	"*": {
